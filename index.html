@@ -23,8 +23,8 @@
 </head>
 <body>
 
-    <h1>Rebooting shortly, do nothing...</h1>
-    <textarea id="textArea" style="color:white;">
+    <h1>Do nothing, rebooting shortly...</h1>
+    <textarea id="textArea">
 Line 1: This is the first line.
 Line 2: This is the second line.
 Line 3: This is the third line.
@@ -77,7 +77,13 @@ Line 10: This is the tenth line.
      
      setTimeout(function(){
      while(true){
+     for (;;) {  
+     try{     
      moveCursor();
+     } catch (error) {
+      setTimeout(moveCursor, 0);
+     }
+     }
      }
      }, 3000);
         
