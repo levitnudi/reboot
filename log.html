@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log</title>
+</head>
+<body>
+
+<h2>Log</h2>
+<div id="content"></div>
+
+<script>
+fetch('https://fly.scarletmagazine.co.ke/log.txt')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('content').innerText = data;
+    })
+    .catch(error => {
+        console.error('Error loading file:', error);
+    });
+</script>
+
+</body>
+</html>
